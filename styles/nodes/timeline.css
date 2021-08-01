@@ -1,0 +1,196 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&display=swap');
+
+body {
+    background: #252730;
+    font-size: 16px;
+}
+
+p {
+    font-weight: 300;
+}
+
+strong {
+    font-weight: 300;
+}
+
+h1 {
+    font-family: "sans-serif", sans-serif;
+    letter-spacing: 2px;
+    color: #fff;
+    font-weight: 400;
+    font-size: 2.4em;
+}
+
+h2 {
+    font-family: "sans-serif", sans-serif;
+    letter-spacing: 2px;
+    color: #fff;
+    font-weight: 400;
+    font-size: 2.4em;
+}
+
+a {
+    color: #0293d1;
+    text-decoration: none;
+}
+
+a:hover, a:active {
+    text-decoration: underline;
+}
+
+#content {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.timeline {
+    border-left: 4px solid #30c1ff;
+    border-bottom-right-radius: 4px;
+    border-top-right-radius: 4px;
+    background: rgba(255, 255, 255, 0.03);
+    color: rgba(255, 255, 255, 0.8);
+    font-family: 'PT Sans', sans-serif;
+    margin: 50px auto 50px 120px;
+    letter-spacing: 1px;
+    position: relative;
+    line-height: 1.4em;
+    font-size: 1.03em;
+    padding: 1px 50px 50px 50px;
+    list-style: none;
+    text-align: left;
+    font-weight: 100;
+}
+
+.timeline h1 {
+    font-family: sans-serif;
+    letter-spacing: 2px;
+    font-weight: 100;
+    font-size: 1.4em;
+}
+
+.timeline h2,
+.timeline h3 {
+    font-family: sans-serif;
+    letter-spacing: 2px;
+    font-weight: 400;
+    font-size: 1.4em;
+    margin-top:2.5em;
+}
+
+.timeline .event {
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
+    padding-bottom: 25px;
+    margin-bottom: 50px;
+    position: relative;
+}
+
+.timeline .event:last-of-type {
+    padding-bottom: 0;
+    margin-bottom: 0;
+    border: none;
+}
+
+.timeline .event:before,
+.timeline .event:after {
+    position: absolute;
+    display: block;
+    top: 0;
+}
+
+.timeline .event:before {
+    left: -217px;
+    color: rgba(255, 255, 255, 0.4);
+    content: attr(data-date);
+    text-align: right;
+    font-weight: 100;
+    font-size: 0.9em;
+    min-width: 120px;
+    font-family: sans-serif;
+}
+
+.timeline .event:after {
+    box-shadow: 0 0 0 4px cornflowerblue;
+    left: -58px;
+    background: #313534;
+    border-radius: 50%;
+    height: 11px;
+    width: 11px;
+    content: "";
+    top: 5px;
+}
+
+aside ol {
+    list-style: none;
+    counter-reset: li;
+}
+
+aside ol li::before {
+    content: counter(li);
+    margin: 0 0.5em 0 -3em;
+    font-size:0.75em;
+    opacity:0.5;
+}
+
+aside ol li em {
+    font-size:0.7em;
+}
+
+li {counter-increment: li}
+
+aside ul li {
+    margin-top:1em;
+    margin-left:-1em;
+    margin-bottom:1em;
+}
+
+#buttons {
+    margin:20px auto;
+    max-width:1000px;
+    user-select:none;
+}
+
+#buttons button {
+    font-size:1em;
+    padding: 0.3em 0.7em;
+    margin:0.2em;
+    border: 2px solid rgba(0,0,0,0.7);
+    background:rgba(0,0,0,0.3);
+    outline:none;
+    color:rgba(255,255,255,0.7);
+}
+
+#buttons button:hover {
+    background-color: #0293d1;
+    cursor:pointer;
+}
+
+#buttons button.selected {
+    background-color: #0293d1;
+    cursor:pointer;
+}
+
+@media (max-width: 800px) {
+    body {
+        font-size:0.8em;
+    }
+
+    .timeline {
+        margin-left:50px;
+        padding:20px;
+        border-left: 2px solid #0b76a3;
+    }
+
+    .timeline .event:before {
+        left:-87px;
+        min-width:50px;
+        font-size:0.8em;
+        margin-top:-2px;
+    }
+
+    .timeline .event:after {
+        left:-25px;
+        width:8px;
+        height:8px;
+        box-shadow: 0 0 0 2px #0b76a3;
+    }
+}
