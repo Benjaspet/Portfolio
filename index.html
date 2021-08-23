@@ -62,7 +62,11 @@
        </span>
      </span>
    </div>
-   <script src="./scripts/loader.js"></script>
+   <script>
+     $(window).on("load", function() {
+       $(".loader-wrapper").fadeOut(1500);
+     });
+   </script>
    <div class="row">
      <div class="col-xs-12">
         <div class="card">
@@ -214,10 +218,6 @@
 <script type="text/javascript" src="./scripts/fade.js"></script>
 <script type="text/javascript" src="./scripts/animations.js"></script>
 <script type="text/javascript" src="./scripts/documentReady.js"></script>
+<script type="text/javascript" src="./scripts/scroller.js"></script>
 <script type="text/javascript" src="https://unpkg.com/scrollreveal"></script>
-<script>
-  window.onbeforeunload = function () {
-    window.scrollTo(0, 0);
-  }
-</script>
 </html>

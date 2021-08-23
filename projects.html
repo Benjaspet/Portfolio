@@ -5,9 +5,9 @@
 
     <title>Eerie | Projects</title>
 
-    <link rel="icon" href="../assets/icons/Eerie.ico">
+    <link rel="icon" href="https://raw.githubusercontent.com/Eerie6560/Archives/main/images/avatars/Mew-Omni.jpg">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css">
-    <link href="../styles/base.css" rel="stylesheet">
+    <link href="./styles/base.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
     <meta charset="UTF-8">
@@ -73,7 +73,11 @@
         <span class="loader"><span class="loader-inner"></span></span>
     </div>
 
-    <script src="../scripts/loader.js"></script>
+    <script>
+        $(window).on("load", function() {
+            $(".loader-wrapper").fadeOut(1500);
+        });
+    </script>
 
     <div class="row">
         <div class="col-xs-12">
@@ -137,8 +141,8 @@
 
 </footer>
 
-<script src="../scripts/fade.js"></script>
+<script src="./scripts/fade.js"></script>
 <script src="https://unpkg.com/scrollreveal"></script>
-<script type="text/javascript" src="../scripts/animations.js"></script>
+<script type="text/javascript" src="./scripts/animations.js"></script>
 
 </html>
