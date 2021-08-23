@@ -17,23 +17,16 @@
   <link rel="icon" href="https://raw.githubusercontent.com/Eerie6560/Archives/main/images/avatars/Mew-Omni.jpg">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
-
 <body>
-
 <header class="white-text-container section-container">
-
-  <div class="background-color-layer" style="background-image: url('./assets/gifs/City-Animated.gif');"></div>
-
+  <div class="background-color-layer" style="background-image: url('./assets/gifs/Fall-Plaza.gif');"></div>
   <div class="text-center">
-
     <h1 class="eerie-title">
         <span class="text-wrapper">
           <span class="letters">Contact</span>
         </span>
     </h1>
-
     <p>Want to get in touch? Contact me below!</p>
-
     <p>
       <a class="fa-icon fa-icon-2x" href="https://github.com/PonjoTeam">
         <i class="fa fa-github"></i>
@@ -54,35 +47,26 @@
         <i class="fas fa-flag"></i>
       </a>
     </p>
-
   </div>
-
 </header>
-
 <div class="container">
-
   <div class="loader-wrapper">
     <span class="loader"><span class="loader-inner"></span></span>
   </div>
-
   <script>
     $(window).on("load", function() {
       $(".loader-wrapper").fadeOut(1700);
     });
   </script>
-
   <div class="row">
     <div class="col-xs-12">
-
       <div class="card">
         <div class="card-block">
-
           <div class="row">
-
             <div class="col-md-8">
-
-              <center><h2>Let's get in touch!</h2></center>
-
+              <h2 class="text-center">
+                Let's get in touch!
+              </h2>
               <form action="./contact.html" class="reveal-content">
                 <div class="form-group">
                   <p><b>Your name (or online alias):</b></p>
@@ -105,28 +89,21 @@
                   <center><button type="button" class="btn btn-primary" onclick="sendContactWebhook()">Send this bad boy over!</button></center>
                 </div>
               </form>
-
-              <center><a href="./">Homepage</a> | <a onclick="window.history.back()" style="cursor: pointer">Previous Page</a> | <a href="./projects">My Projects</a> | <a href="https://ponjo.club">Ponjo Development Team</a></center>
-
+              <div class="text-center">
+                <a href="./">Homepage</a> | <a onclick="window.history.back()" style="cursor: pointer">Previous Page</a> | <a href="./projects">My Projects</a> | <a href="https://ponjo.club">Ponjo Development Team</a></center>
+              </div>
             </div>
           </div>
-
         </div>
       </div>
-
     </div>
   </div>
 </div>
-
 </body>
-
 <footer class="footer-container white-text-container text-center">
-
   <div class="container">
     <div class="row">
-
       <p>© 2020-2021 <a href="https://eerie.codes">Ben Petrillo</a>. All rights reserved.</p>
-
       <p>
         <a class="fa-icon fa-icon-2x" href="https://github.com/PonjoTeam">
           <i class="fa fa-github"></i>
@@ -147,15 +124,12 @@
           <i class="fas fa-flag"></i>
         </a>
       </p>
-
     </div>
   </div>
-
 </footer>
-
 <script type="text/javascript" src="./scripts/fade.js"></script>
-<script type="text/javascript" src="https://unpkg.com/scrollreveal"></script>
 <script type="text/javascript" src="./scripts/animations.js"></script>
 <script type="text/javascript" src="./scripts/form/contact.js"></script>
-
+<script type="text/javascript" src="./scripts/scroller.js"></script>
+<script type="text/javascript" src="https://unpkg.com/scrollreveal"></script>
 </html>
