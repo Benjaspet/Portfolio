@@ -4,3 +4,9 @@
     margin-right: auto;
     width: 50%;
 }
+
+@media (max-width: 375px) {
+    .image-center {
+        display: none;
+    }
+}
