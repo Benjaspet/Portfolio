@@ -2,11 +2,9 @@
 // way. For that reason, I will be including documentation above every function.
 // Why, you may ask? Because I want people to learn. I want to inspire future
 // developers but also help current developers expand their knowledge even more.
-// I know, I know, you think I'm cray cray, but it's for the greater benefit.
 //
 // Also, thanks for taking the time to look at the source code for the new version
 // of my site. You're the best. Stitch loves you. <3
-
 
 // Initializes the content on load.
 
