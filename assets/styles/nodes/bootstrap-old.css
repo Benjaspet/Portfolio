@@ -5410,7 +5410,7 @@ button.close {
 }
 
 body {
-    background-image: url("../../assets/images/background/Dark Forest.jpeg");
+    background-image: url("../../images/background/Dark Forest.jpeg");
     background-image: -webkit-linear-gradient(top, #13aced, #ff6975);
     background-image: -o-linear-gradient(top, #13aced 0, #ff6975 100%);
     background-image: linear-gradient(180deg, #13aced 0, #ff6975);
@@ -5455,7 +5455,7 @@ body.white {
 }
 
 .background-color-layer {
-    background-image: url("../../assets/images/background/Dark Forest.jpeg");
+    background-image: url("../../images/background/Dark Forest.jpeg");
     background-image: -webkit-linear-gradient(left, #186df5, #13aced);
     background-image: -o-linear-gradient(left, #186df5 0, #13aced 100%);
     background-image: linear-gradient(90deg, #186df5 0, #13aced);
