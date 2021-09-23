@@ -15,7 +15,7 @@ body {
 }
 
 .cards-container {
-    width: 800px;
+    width: 750px;
     max-width: 100%;
     margin: 2rem auto;
 }
@@ -245,6 +245,6 @@ body {
     .cards-container {
         float: none;
         margin: auto;
-        transform: scale(0.95);
+        transform: scale(0.9);
     }
 }
