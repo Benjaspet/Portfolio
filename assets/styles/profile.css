@@ -243,7 +243,6 @@ body {
 
 @media only screen and (max-width: 810px) {
     .cards-container {
-        float: none;
-        margin: auto;
+        margin-top: auto;
     }
 }
