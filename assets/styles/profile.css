@@ -17,7 +17,7 @@ body {
 .cards-container {
     width: 800px;
     max-width: 100%;
-    margin: 2rem auto;
+    margin: auto;
 }
 
 .card {
@@ -236,13 +236,12 @@ body {
     position: absolute;
     top: -27px;
     left: 50%;
-    margin-left: -15px;
     border: 15px solid transparent;
     border-bottom-color: #6573d0;
 }
 
 @media only screen and (max-width: 810px) {
     .cards-container {
-        margin-top: auto;
+        margin: auto;
     }
 }
