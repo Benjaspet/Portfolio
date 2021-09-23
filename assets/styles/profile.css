@@ -15,15 +15,13 @@ body {
 }
 
 .cards-container {
-    width: 750px;
-    max-width: 100%;
+    width: max-content;
     margin: auto;
 }
 
 .card {
     float: none;
-    margin-left: auto;
-    margin-right: auto;
+    width: max-content;
 }
 
 .card-one {
@@ -243,10 +241,6 @@ body {
 @media only screen and (max-width: 810px) {
     .cards-container {
         max-width: 100%;
-        margin: auto;
-    }
-
-    .card {
         margin: auto;
     }
 }
