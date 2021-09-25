@@ -26,6 +26,17 @@
   <script type="module">
     initScrollbar();
   </script>
+  <div class="loader-wrapper">
+     <span class="loader">
+       <span class="loader-inner">
+       </span>
+     </span>
+  </div>
+  <script>
+    $(window).on("load", function() {
+      $(".loader-wrapper").fadeOut(1500);
+    });
+  </script>
   <div class="background-color-layer" style="background-image: url('./assets/gifs/Beach-Background.gif');"></div>
   <div class="text-center">
     <h1 class="eerie-title">
