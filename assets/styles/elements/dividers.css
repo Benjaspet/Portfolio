@@ -44,4 +44,8 @@ hr.rounded {
 
 .ben-image {
     border-radius: 2%;
+    justify-content: center;
+    width: 300px;
+    height: 300px;
+    position: center;
 }
