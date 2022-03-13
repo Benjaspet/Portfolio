@@ -19,3 +19,41 @@ hr.rounded {
     border-top: 8px solid #bbb;
     border-radius: 5px;
 }
+
+.ben-hr {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    border: 0;
+    border-top: 1px solid white;
+    width: 40%;
+    border-top: 2px solid white;
+}
+
+.ben-container {
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+.ben-badge-flex {
+    padding: 10px 475px 20px;
+}
+
+.ben-bold {
+    font-weight: bold;
+}
+
+@media screen and (max-width: 768px) {
+
+    .ben-hr {
+        width: 85%;
+    }
+
+    .ben-container {
+        padding-left: 35px;
+        padding-right: 35px;
+    }
+
+    .ben-badge-flex {
+        padding: 10px;
+    }
+}
