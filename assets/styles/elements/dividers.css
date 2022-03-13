@@ -35,25 +35,13 @@ hr.rounded {
 }
 
 .ben-badge-flex {
-    padding: 10px 475px 20px;
+    padding: 10px 250px 20px;
 }
 
 .ben-bold {
     font-weight: bold;
 }
 
-@media screen and (max-width: 768px) {
-
-    .ben-hr {
-        width: 85%;
-    }
-
-    .ben-container {
-        padding-left: 35px;
-        padding-right: 35px;
-    }
-
-    .ben-badge-flex {
-        padding: 10px;
-    }
+.ben-image {
+    border-radius: 2%;
 }
