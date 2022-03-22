@@ -1,9 +1,4 @@
 @import "nodes/bootstrap.css";
 @import "nodes/loadingscreen.css";
-@import "elements/code.css";
 @import "elements/orientation.css";
 @import "elements/dividers.css";
-
-.eerie-p {
-    color: darkgray;
-}
