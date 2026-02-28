@@ -17,7 +17,7 @@ const ExperienceDropdownItem = ({ experience, logo }: ExperienceDropdownItemProp
     const [isOpen, setIsOpen] = useState(false);
 
     return (
-        <div className="border border-slate-700 rounded-lg overflow-hidden transition-colors duration-200 hover:border-blue-700">
+        <div className={`border rounded-lg overflow-hidden transition-colors duration-200 ${isOpen ? 'border-[#0b6db8]' : 'border-slate-700 hover:border-[#0b6db8]'}`}>
             <button
                 onClick={() => setIsOpen(!isOpen)}
                 className="w-full flex items-center gap-3 px-4 py-3 bg-card hover:bg-accent/30 transition-colors duration-200"
@@ -31,11 +31,11 @@ const ExperienceDropdownItem = ({ experience, logo }: ExperienceDropdownItemProp
                 />
                 <div className="flex flex-col items-start flex-1 min-w-0">
                     <span className="font-semibold text-base text-gray-100 leading-tight truncate w-full text-left">
-                        {experience.company}
+                        {experience.company.trim()}
                     </span>
                     {experience.roles[0] && (
                         <span className="text-sm text-muted-foreground leading-tight truncate w-full text-left">
-                            {experience.roles[0].position}
+                            {experience.roles[0].position.trim()}
                         </span>
                     )}
                 </div>
