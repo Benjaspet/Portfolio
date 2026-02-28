@@ -29,9 +29,17 @@ export default {
         {
             company: "Chewy, Inc.",
             description: "American online retailer of pet food and other pet-related products based in Plantation, Florida.",
-            summary: "Fulfillment Execution Applications Team",
             companyLogo: "/experience/chewy-icon.png",
             roles: [
+                {
+                    position: "Software Engineer I",
+                    location: "Boston, MA",
+                    dateRange: "Jun 2026 - Present",
+                    status: "current",
+                    bullets: [
+                        "Incoming Summer 2026 - Pet Healthcare"
+                    ]
+                },
                 {
                     position: "Software Engineer Co-op",
                     location: "Boston, MA",
@@ -51,7 +59,6 @@ export default {
         {
             company: "FirstGlance, Inc.",
             description: "A startup discovery platform that makes finding, evaluating, and sharing startups easier than ever before by providing personalized startup recommendations tailored to investors' preferences, allowing them to follow startups' progress, and enabling effortless sharing of startup information.",
-            summary: "Product & Platform Teams",
             companyLogo: "/experience/firstglance-icon.png",
             roles: [
                 {
@@ -71,8 +78,7 @@ export default {
         },
         {
             company: "Northeastern University",
-            description: "Fenway, Boston MA",
-            summary: "Object-Oriented Design, Fundamentals of Computer Science 2",
+            description: "Object-Oriented Design (Lead TA), Fundamentals of Computer Science 2",
             companyLogo: "/experience/northeastern-icon.png",
             roles: [
                 {
@@ -81,20 +87,9 @@ export default {
                     dateRange: "Sep - Dec 2024",
                     status: "done",
                     bullets: [
-                        "Engineered a traction dashboard, auth flows, and onboarding components for an internal tool using Next.js",
-                        "Created a data migration pipeline from Firebase to PostgreSQL, architecting schema design and relations",
-                        "Integrated 25+ OpenAPI-compliant REST endpoints with FastAPI, enforcing strict type validation",
-                        "Automated infrastructure deployment to AWS EC2 instances using Terraform, accelerating workflows",
-                        "Leveraged pytest and bun-test to develop regression and API-level test suites, achieving 88% coverage"
-                    ]
-                },
-                {
-                    position: "Software Developer (Core Infra)",
-                    location: "Boston, MA",
-                    dateRange: "Jun 2025 - Aug 2025",
-                    status: "done",
-                    bullets: [
-                        "Recruitment tooling for the Core Infrastructure team using Nest.js, React, and AWS Cognito"
+                        "Direct 3 lab sections of 40+ students, leading lecture-style sessions on software development best practices",
+                        "Grade 30+ assignments and lab activities weekly, collaborating with professors on grading rubrics & activities",
+                        "Hold office hours for one-on-one mentoring on object-oriented design, data structures, and MVC patterns"
                     ]
                 }
             ]
@@ -103,7 +98,6 @@ export default {
     studentOrganizations: [
         {
             name: "Generate: a Sherman Center program",
-            summary: "Software Consulting for Startups",
             description: "Generate is Northeastern's premiere student-led product development studio. Its team of dedicated engineers and designers work and empower real startups with our innovative products. Each semester, Generate works with Software and Hardware founders to build their product and support them on their entrepreneurial journey.",
             logo: "/experience/generate-icon.png",
             roles: [
@@ -133,26 +127,17 @@ export default {
         },
         {
             name: "Code4Community",
-            summary: "Engineering for Boston Non-profits",
             description: "Code4Community is a student-led organization that provides free software development services to non-profit organizations in the Greater Boston area.",
             logo: "/experience/c4c-icon.png",
             roles: [
                 {
                     position: "Software Developer",
                     location: "Boston, MA",
-                    dateRange: "Sep 2025 - Present",
+                    dateRange: "May 2025 - Apr 2026",
                     status: "current",
                     bullets: [
-                        "Recruitment tooling for the Core Infrastructure team using Nest.js, React, and AWS Cognito"
-                    ]
-                },
-                {
-                    position: "Software Developer (Core Infra)",
-                    location: "Boston, MA",
-                    dateRange: "Jun 2025 - Aug 2025",
-                    status: "done",
-                    bullets: [
-                        "Recruitment tooling for the Core Infrastructure team using Nest.js, React, and AWS Cognito"
+                        "Designed & implement backend infrastructure for donation management for the Fenway Community Center, integrating Stripe API for secure payments",
+                        "Automation, data pipelines, and full-stack development using React, Nest.js, & AWS for the club's internal recruitment platform"
                     ]
                 }
             ]
@@ -207,7 +192,7 @@ export default {
     posts: [
         {
             identifier: "gen-platemate",
-            title: "PlateMate: a Generate S25 client project",
+            title: "PlateMate: Generate Spring 2025",
             author: "Ben Petrillo",
             timestamp: "Thu Apr 24 2025",
             link: "/posts/gen-platemate",
