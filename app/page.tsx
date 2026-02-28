@@ -13,12 +13,12 @@ import {fadeDownVariants} from "@/app/animations/fade-down"
 import Footer from "@/components/footer"
 import config from "@/app/config"
 import type {Education, PortfolioProject, StudentOrganization} from "@/app/types"
-import ExperienceCard from "@/components/experience-card"
+import ExperienceDropdown from "@/components/experience-dropdown"
 import {Separator} from "@/components/ui/separator"
 import EducationCard from "@/components/education-card"
 import PillCard from "@/components/pill-card"
 import {useLayoutSetup} from "@/hooks/useLayoutSetup"
-import {HeadshotSlideshow} from "@/components/headshot-slideshow"
+import Image from "next/image"
 import {Dialog, DialogContent, DialogTrigger, DialogTitle} from "@/components/ui/dialog"
 import GitHubContributions from "@/components/github-contributions"
 import CollapsibleSection from "@/components/collapsible-section"
@@ -32,9 +32,7 @@ const icons = {
     github: <GitHubIcon size={16} className="transition-transform duration-500 group-hover:rotate-[25deg]"/>
 }
 
-const images = [
-    "/photography/headshot-chewy-front.jpg",
-];
+const HEADSHOT = "/photography/headshot-chewy-front.jpg";
 
 const LINKS = {
     resume: "https://drive.google.com/file/d/1AwhAmrqghG4e-C_ToYDGksaUq5HV3NWt/view?usp=drive_link",
@@ -91,24 +89,24 @@ export default function Home() {
                 <DialogTrigger asChild>
                     <button
                         type="button"
-                        className={`relative transition-transform duration-200 hover:scale-[1.02] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0b6db8] focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950 ${className}`}
+                        className={`relative overflow-hidden transition-transform duration-200 hover:scale-[1.02] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0b6db8] focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950 ${className}`}
                     >
-                        <HeadshotSlideshow 
-                            images={images} 
-                            alt="Headshot" 
-                            width={size} 
-                            height={size} 
-                            className="rounded-3xl"
+                        <Image
+                            src={HEADSHOT}
+                            alt="Headshot"
+                            width={size}
+                            height={size}
+                            className="block"
                         />
                     </button>
                 </DialogTrigger>
                 <DialogContent showClose={false} className="w-auto max-w-none p-0 bg-transparent border-none shadow-none">
                     <DialogTitle className="sr-only">Profile image</DialogTitle>
-                    <HeadshotSlideshow 
-                        images={images} 
-                        alt="Headshot expanded" 
-                        width={expandedSize} 
-                        height={expandedSize} 
+                    <Image
+                        src={HEADSHOT}
+                        alt="Headshot expanded"
+                        width={expandedSize}
+                        height={expandedSize}
                         className="rounded-3xl border-4 border-[#0b6db8]"
                     />
                 </DialogContent>
@@ -141,7 +139,7 @@ export default function Home() {
                     variants={foldUpVariants}
                     initial="hidden"
                     animate="visible"
-                    className="hidden sm:block text-md text-gray-300 font-semibold text-center sm:text-start"
+                    className="hidden sm:block text-md text-gray-300 font-semibold text-center sm:text-start pr-12"
                 >
                     <span className="hidden sm:inline-flex gap-1 items-center mb-4">
                         Always moving fast, eager to learn, ready to build.
@@ -152,18 +150,18 @@ export default function Home() {
     )
 
     const MobileProfileHeader = () => (
-        <div className="flex sm:hidden items-center justify-between w-full">
+        <div className="flex sm:hidden items-start justify-between w-full gap-4">
             <div className="flex-1 min-w-0">
                 <ProfileText isMobile={true} />
                 <SocialButtons showText={false} />
             </div>
             <motion.div
-                className="flex-shrink-0 ml-4"
+                className="flex-shrink-0"
                 initial="hidden"
                 animate="visible"
                 variants={fadeInFromRightVariants}
             >
-                <ProfileImage size={120} className="rounded-3xl border-2 border-[#0b6db8]" />
+                <ProfileImage size={100} className="rounded-2xl border-2 border-[#0b6db8]" />
             </motion.div>
         </div>
     )
@@ -257,33 +255,28 @@ export default function Home() {
         </motion.div>
     )
 
-    const ExperienceAndEducationTab = () => (
+    const ExperienceAndEducationTab = () => {
+        const experienceItems = [
+            ...config.experience.map((company) => ({
+                experience: company,
+                logo: company.companyLogo,
+            })),
+            ...config.studentOrganizations.map((org: StudentOrganization) => ({
+                experience: {
+                    company: org.name,
+                    summary: org.summary,
+                    description: org.description,
+                    companyLogo: org.logo,
+                    roles: org.roles,
+                },
+                logo: org.logo,
+            })),
+        ];
+
+        return (
         <>
-            <AnimatedGrid className="mx-auto w-full items-center justify-center">
-                <div className="grid grid-cols-3 sm:flex sm:flex-wrap gap-4 justify-items-center">
-                    {config.experience.map((company, index) => (
-                        <motion.div key={index} variants={fadeInFromRightChildVariants}>
-                            <ExperienceCard
-                                logo={company.companyLogo}
-                                experience={company}
-                            />
-                        </motion.div>
-                    ))}
-                    {config.studentOrganizations.map((org: StudentOrganization, index: number) => (
-                        <motion.div key={`org-${index}`} variants={fadeInFromRightChildVariants}>
-                            <ExperienceCard
-                                logo={org.logo}
-                                experience={{
-                                    company: org.name,
-                                    summary: org.summary,
-                                    description: org.description,
-                                    companyLogo: org.logo,
-                                    roles: org.roles
-                                }}
-                            />
-                        </motion.div>
-                    ))}
-                </div>
+            <AnimatedGrid className="w-full">
+                <ExperienceDropdown items={experienceItems} />
             </AnimatedGrid>
 
             <SectionSeparator title="I've been shipping." />
@@ -309,7 +302,8 @@ export default function Home() {
                 ))}
             </AnimatedGrid>
         </>
-    )
+        );
+    }
 
     const HomeContent = () => (
         <div className="px-6 sm:px-12 py-6 md:py-12 overflow-y-auto h-full hide-scrollbar">
@@ -343,15 +337,15 @@ export default function Home() {
 
     const DesktopLayout = () => (
         <div className="flex h-screen">
-            <div className="w-[18%] h-screen">
+            <div className="flex-1 h-screen">
                 <div className="w-full h-full bg-gradient-to-br from-[#0b6db8] via-[#2ea3f5] to-[#7dd3ff]" />
             </div>
-            <div className="w-[64%] overflow-y-auto hide-scrollbar">
+            <div className="w-[64%] max-w-[1000px] overflow-y-auto hide-scrollbar">
                 <ContentLoader contentKey="content">
                     <HomeContent/>
                 </ContentLoader>
             </div>
-            <div className="w-[18%] h-screen">
+            <div className="flex-1 h-screen">
                 <div className="w-full h-full bg-gradient-to-bl from-[#0b6db8] via-[#2ea3f5] to-[#7dd3ff]" />
             </div>
         </div>

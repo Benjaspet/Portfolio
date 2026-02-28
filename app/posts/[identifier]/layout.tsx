@@ -163,22 +163,19 @@ export default function Layout({children}: Readonly<{ children: React.ReactNode;
                             <NavigationMenu>
                                 <NavigationMenuList className={"gap-1"}>
                                     <NavigationMenuItem>
-                                        <Link href="/" legacyBehavior passHref>
-                                            <NavigationMenuLink
-                                                className={navigationMenuTriggerStyle()}>Home</NavigationMenuLink>
-                                        </Link>
+                                        <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
+                                            <Link href="/">Home</Link>
+                                        </NavigationMenuLink>
                                     </NavigationMenuItem>
                                     <NavigationMenuItem>
-                                        <Link href="/posts/gen-platemate" legacyBehavior passHref>
-                                            <NavigationMenuLink
-                                                className={navigationMenuTriggerStyle()}>PlateMate</NavigationMenuLink>
-                                        </Link>
+                                        <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
+                                            <Link href="/posts/gen-platemate">PlateMate</Link>
+                                        </NavigationMenuLink>
                                     </NavigationMenuItem>
                                     <NavigationMenuItem>
-                                        <Link href="/posts/gen-nightlife" legacyBehavior passHref>
-                                            <NavigationMenuLink
-                                                className={navigationMenuTriggerStyle()}>Nightlife</NavigationMenuLink>
-                                        </Link>
+                                        <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
+                                            <Link href="/posts/gen-nightlife">Nightlife</Link>
+                                        </NavigationMenuLink>
                                     </NavigationMenuItem>
                                 </NavigationMenuList>
                             </NavigationMenu>
@@ -202,22 +199,19 @@ export default function Layout({children}: Readonly<{ children: React.ReactNode;
                             <NavigationMenu>
                                 <NavigationMenuList className={"gap-1"}>
                                     <NavigationMenuItem>
-                                        <Link href="/" legacyBehavior passHref>
-                                            <NavigationMenuLink
-                                                className={navigationMenuTriggerStyle()}>Home</NavigationMenuLink>
-                                        </Link>
+                                        <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
+                                            <Link href="/">Home</Link>
+                                        </NavigationMenuLink>
                                     </NavigationMenuItem>
                                     <NavigationMenuItem>
-                                        <Link href="/posts/gen-platemate" legacyBehavior passHref>
-                                            <NavigationMenuLink
-                                                className={navigationMenuTriggerStyle()}>PlateMate</NavigationMenuLink>
-                                        </Link>
+                                        <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
+                                            <Link href="/posts/gen-platemate">PlateMate</Link>
+                                        </NavigationMenuLink>
                                     </NavigationMenuItem>
                                     <NavigationMenuItem>
-                                        <Link href="/posts/gen-nightlife" legacyBehavior passHref>
-                                            <NavigationMenuLink
-                                                className={navigationMenuTriggerStyle()}>NightLife</NavigationMenuLink>
-                                        </Link>
+                                        <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
+                                            <Link href="/posts/gen-nightlife">NightLife</Link>
+                                        </NavigationMenuLink>
                                     </NavigationMenuItem>
                                 </NavigationMenuList>
                             </NavigationMenu>
