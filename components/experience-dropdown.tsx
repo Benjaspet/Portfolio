@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { ChevronDown } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, LayoutGroup } from 'framer-motion';
 import Image from 'next/image';
 import { Experience, Role } from '@/app/types';
 import { Timeline, TimelineDot, TimelineHeading, TimelineItem } from '@/components/ui/timeline';
@@ -11,15 +11,16 @@ import CustomTimelineItem from '@/components/timeline-item';
 type ExperienceDropdownItemProps = {
     experience: Experience;
     logo: string;
+    isOpen: boolean;
+    onToggle: () => void;
 };
 
-const ExperienceDropdownItem = ({ experience, logo }: ExperienceDropdownItemProps) => {
-    const [isOpen, setIsOpen] = useState(false);
+const ExperienceDropdownItem = ({ experience, logo, isOpen, onToggle }: ExperienceDropdownItemProps) => {
 
     return (
         <div className={`border rounded-lg overflow-hidden transition-colors duration-200 ${isOpen ? 'border-[#0b6db8]' : 'border-slate-700 hover:border-[#0b6db8]'}`}>
             <button
-                onClick={() => setIsOpen(!isOpen)}
+                onClick={onToggle}
                 className="w-full flex items-center gap-3 px-4 py-3 bg-card hover:bg-accent/30 transition-colors duration-200"
             >
                 <Image
@@ -48,41 +49,40 @@ const ExperienceDropdownItem = ({ experience, logo }: ExperienceDropdownItemProp
                 </motion.div>
             </button>
 
-            <AnimatePresence initial={false}>
-                {isOpen && (
-                    <motion.div
-                        initial={{ height: 0, opacity: 0 }}
-                        animate={{ height: 'auto', opacity: 1 }}
-                        exit={{ height: 0, opacity: 0 }}
-                        transition={{ duration: 0.25, ease: 'easeInOut' }}
-                        className="overflow-hidden"
-                    >
-                        <div className="px-5 pb-5 pt-4 border-t border-slate-700">
-                            {experience.description && (
-                                <p className="text-base text-muted-foreground leading-snug mb-5">
-                                    {experience.description}
-                                </p>
-                            )}
-                            <Timeline>
-                                {experience.roles.map((role: Role, index: number) => (
-                                    <CustomTimelineItem
-                                        key={index}
-                                        status={role.status}
-                                        role={role.position}
-                                        company={experience.company}
-                                        locationAndDate={role.location + ' • ' + role.dateRange}
-                                        bullets={role.bullets}
-                                    />
-                                ))}
-                                <TimelineItem>
-                                    <TimelineHeading>Experience began.</TimelineHeading>
-                                    <TimelineDot status="done" />
-                                </TimelineItem>
-                            </Timeline>
-                        </div>
-                    </motion.div>
-                )}
-            </AnimatePresence>
+            <motion.div
+                initial={false}
+                animate={{ height: isOpen ? 'auto' : 0, opacity: isOpen ? 1 : 0 }}
+                transition={{
+                    height: { duration: 0.28, ease: 'easeInOut' },
+                    opacity: { duration: 0.28, ease: 'easeInOut' },
+                }}
+                className="overflow-hidden"
+                aria-hidden={!isOpen}
+            >
+                <div className="px-5 pb-5 pt-4 border-t border-slate-700">
+                    {experience.description && (
+                        <p className="text-base text-muted-foreground leading-snug mb-5">
+                            {experience.description}
+                        </p>
+                    )}
+                    <Timeline>
+                        {experience.roles.map((role: Role, index: number) => (
+                            <CustomTimelineItem
+                                key={index}
+                                status={role.status}
+                                role={role.position}
+                                company={experience.company}
+                                locationAndDate={role.location + ' • ' + role.dateRange}
+                                bullets={role.bullets}
+                            />
+                        ))}
+                        <TimelineItem>
+                            <TimelineHeading>Experience began.</TimelineHeading>
+                            <TimelineDot status="done" />
+                        </TimelineItem>
+                    </Timeline>
+                </div>
+            </motion.div>
         </div>
     );
 };
@@ -92,12 +92,36 @@ type ExperienceDropdownProps = {
 };
 
 const ExperienceDropdown = ({ items }: ExperienceDropdownProps) => {
+    const [openIndex, setOpenIndex] = useState<number | null>(null);
+
     return (
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-2 w-full items-start">
-            {items.map((item, index) => (
-                <ExperienceDropdownItem key={index} experience={item.experience} logo={item.logo} />
-            ))}
-        </div>
+        <LayoutGroup>
+            <motion.div
+                layout
+                transition={{ layout: { duration: 0.28, ease: 'easeInOut' } }}
+                className="w-full grid grid-cols-1 md:grid-cols-2 gap-2 items-start"
+            >
+                {items.map((item, index) => {
+                    const isOpen = openIndex === index;
+
+                    return (
+                        <motion.div
+                            layout
+                            transition={{ layout: { duration: 0.28, ease: 'easeInOut' } }}
+                            key={`${index}-${item.experience.company}`}
+                            className={isOpen ? 'md:col-span-2 md:order-first' : ''}
+                        >
+                            <ExperienceDropdownItem
+                                experience={item.experience}
+                                logo={item.logo}
+                                isOpen={isOpen}
+                                onToggle={() => setOpenIndex(isOpen ? null : index)}
+                            />
+                        </motion.div>
+                    );
+                })}
+            </motion.div>
+        </LayoutGroup>
     );
 };
 
