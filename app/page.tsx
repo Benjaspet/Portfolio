@@ -32,13 +32,13 @@ const icons = {
     github: <GitHubIcon size={16} className="transition-transform duration-500 group-hover:rotate-[25deg]"/>
 }
 
-const HEADSHOT = "/photography/headshot-chewy-front.jpg";
+const HEADSHOT = "/photography/headshot-chewy-front.png";
 
 const LINKS = {
     resume: "https://drive.google.com/file/d/1AwhAmrqghG4e-C_ToYDGksaUq5HV3NWt/view?usp=drive_link",
-    github: "https://github.com/benjaspet",
+    github: "https://github.com/bpetrillo-chwy",
     linkedin: "https://www.linkedin.com/in/ben-petrillo",
-    email: "mailto:petrillo.b@northeastern.edu"
+    email: "mailto:me@benpetrillo.dev"
 };
 
 export default function Home() {
@@ -283,7 +283,7 @@ export default function Home() {
 
             <AnimatedGrid className="w-full">
                 <motion.div variants={fadeInFromRightChildVariants}>
-                    <GitHubContributions username="benjaspet" />
+                    <GitHubContributions username="bpetrillo-chwy" />
                 </motion.div>
             </AnimatedGrid>
 

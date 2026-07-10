@@ -37,7 +37,9 @@ export default {
                     dateRange: "Jun 2026 - Present",
                     status: "current",
                     bullets: [
-                        "Incoming Summer 2026 - Pet Healthcare"
+                        "Developing multi-region, multi-environment infrastructure to support controlled substances across Chewy's prescription pharmacy ecosystem",
+                        "Modernized regulated prescription workflows by replacing legacy product jurisdiction validation service dependencies with usage-context-driven decisioning across PDMP reporting and controlled substance flows",
+                        "Built production observability for Chewy's prescription drug monitoring reporting service with OTEL metrics, retry/DQL instrumentation, structured logging,and Datadog dashboards"
                     ]
                 },
                 {
